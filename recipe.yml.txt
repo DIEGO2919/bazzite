@@ -1,0 +1,24 @@
+name: Diego-os-pro
+description: Sistema Nativo Gaming PS5
+
+# Usamos la base de Bazzite (Cambia 'nvidia' por 'amd' si tu GPU es AMD)
+base-image: ghcr.io/ublue-os/bazzite-nvidia
+image-flavor: main
+fedora-version: 40
+
+packages:
+  # --- INTERFAZ Y CONTROL (Puntos 1, 3, 6) ---
+  - gamescope              # El micro-entorno para que no haya escritorio
+  - decky-loader           # Para poner el tema visual de PS5
+  - dualsense-ctl          # Soporte total para mandos
+  - xpadneo                # Soporte para mandos Xbox
+  
+  # --- RENDIMIENTO Y GAMING (Puntos 4, 5, 7) ---
+  - mangohud               # Monitor de FPS y temperatura
+  - gamemode               # Optimización de CPU en tiempo real
+  - piper                  # Configuración de ratones gaming
+  
+  # --- COMPATIBILIDAD (Puntos 8, 9) ---
+  - wine-staging           # Para programas de Windows
+  - protontricks           # Herramienta para juegos complejos de Windows
+  - libdecor               # Necesario para aplicaciones modernas en Wayland
